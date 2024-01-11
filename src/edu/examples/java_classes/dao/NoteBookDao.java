@@ -8,23 +8,31 @@ import edu.examples.java_classes.source.NoteBookProvider;
 
 public class NoteBookDao {
 
-	/*
-	 * public void create() { NoteBookProvider.getInstance(); }
-	 */
-	
-	private final NoteBookProvider provider = NoteBookProvider.getInstance();
-	private final Notebook nb = provider.getNotebook();
+    /*
+     * public void create() { NoteBookProvider.getInstance(); }
+     */
 
-	public void save(Note n) {
-		nb.setNotes(n);
-	}
+    private final NoteBookProvider provider = NoteBookProvider.getInstance();
+    private final Notebook nb = provider.getNotebook();
 
-    public void delete(Note n){
-        nb.deletNones(n);
+    public void save(Note n) {
+        nb.setNotes(n);
     }
 
-	public List<Note> allNotes() {
-		return nb.getNotes();
-	}
+    public void delete(Note n) {
+        nb.deletNotes(n);
+    }
+
+    public void sortTitle() {
+        nb.sortNotesTitle();
+    }
+
+    public void sortContent() {
+        nb.sortNotesContent();
+    }
+
+    public List<Note> allNotes() {
+        return nb.getNotes();
+    }
 
 }
